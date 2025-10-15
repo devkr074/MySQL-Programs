@@ -1,11 +1,8 @@
-/*CURRENT_DATE() and CURRENT_TIME() in SQL*/
-
-CREATE TABLE test (my_date DATE,my_time TIME,my_datetime DATETIME);
-
-INSERT INTO test VALUES(CURRENT_DATE(),CURRENT_TIME(),NOW());
-
-INSERT INTO test VALUES(CURRENT_DATE()+1,NULL,NULL);
-
-INSERT INTO test VALUES(CURRENT_DATE()-1,NULL,NULL);
-
-SELECT * FROM test;
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+WHERE CustomerID = 1;
+UPDATE Customers
+SET PostalCode = 00000
+WHERE Country = 'Mexico';
+UPDATE Customers
+SET PostalCode = 00000;
