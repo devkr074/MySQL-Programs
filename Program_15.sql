@@ -1,15 +1,18 @@
-/*Joins in SQL*/
-
-INSERT INTO transactions(amount,customer_id) VALUES (1.00,NULL);
-
-SELECT * FROM transactions;
-
-INSERT INTO customers(first_name,last_name) VALUES ("Poppy","Puff");
-
-SELECT * FROM customers;
-
-SELECT * FROM transactions INNER JOIN customers ON transactions.customer_id=customers.customer_id;		/*Inner Join*/
-
-SELECT * FROM transactions LEFT JOIN customers ON transactions.customer_id=customers.customer_id;		/*Left Join*/
-
-SELECT * FROM transactions RIGHT JOIN customers ON transactions.customer_id=customers.customer_id;		/*Right Join*/
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+SELECT * FROM Products
+WHERE Price NOT BETWEEN 10 AND 20;
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20
+AND CategoryID NOT IN (1,2,3);
+SELECT * FROM Products
+WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+SELECT * FROM Products
+WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
+ORDER BY ProductName;
+SELECT * FROM Products
+WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
