@@ -1,13 +1,15 @@
-/*Views in SQL*/
-
-/*Views: Views are virtual table with one or more fields from real table*/
-
-CREATE VIEW employee_attendance AS SELECT first_name,last_name FROM employees;
-
-SELECT * FROM employee_attendance;
-
-SELECT * FROM employee_attendance ORDER BY last_name ASC;
-
-DROP VIEW employee_attendance;
-
-/*Any Changes in real table will also reflect in View of a table automatically*/
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+SELECT 'Customer' AS Type, ContactName, City, Country
+FROM Customers
+UNION
+SELECT 'Supplier', ContactName, City, Country
+FROM Suppliers;
